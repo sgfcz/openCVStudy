@@ -1,3 +1,3 @@
 # openCVStudy
 
-官方例子和小项目
+自己写的小demo
