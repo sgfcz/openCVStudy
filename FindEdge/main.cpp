@@ -7,7 +7,7 @@ using namespace cv;
 
 int main()
 {
-	Mat image = imread("C:\\Users\\Test 1\\Pictures\\model\\shirt.bmp");
+	Mat image = imread("C:\\Users\\YSQ\\Pictures\\stitchedImg13.jpg");
 	Mat imageGray, imageth, imageblur;
 	vector <vector<Point>> contours;
 	vector <Vec4i> hieraychy;
@@ -19,8 +19,8 @@ int main()
 	//线性模糊
 	GaussianBlur(imageGray, imageblur, Size(3, 3), 0);
 	//二值化
-	//threshold(imageblur, imageth, 200, 255, THRESH_BINARY_INV);
-	adaptiveThreshold(imageblur, imageth, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 13,8);
+	threshold(imageblur, imageth, 200, 255, THRESH_BINARY_INV);
+	//adaptiveThreshold(imageblur, imageth, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 13,8);
 
 	//寻边
 	findContours(imageth, contours, hieraychy, RETR_EXTERNAL, 1);
